@@ -14,10 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Client {
-    //@NoHtml
+
     private String name;
 
-    //@NoHtml
+
     private String lastname;
 
     @Email
