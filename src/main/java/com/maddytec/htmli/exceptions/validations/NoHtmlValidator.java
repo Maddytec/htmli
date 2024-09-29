@@ -21,6 +21,13 @@ public class NoHtmlValidator implements ConstraintValidator<NoHtml, String> {
 
     public String clearXss(String value) {
         var s = POLICY_FACTORY.sanitize(value);
+//    if we only allow basic html tags
+//        return Jsoup.clean(s, Safelist.basic());
+
+//    allow selected tags and attributes
+//        return Jsoup.clean(s, Safelist.relaxed().addAttributes("p", "b"));
+
+//    if we do not want any html tag
         return Jsoup.clean(s, Safelist.none());
     }
 
